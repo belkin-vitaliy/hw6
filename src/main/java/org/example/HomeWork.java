@@ -1,6 +1,8 @@
 package org.example;
 
 
+import java.util.List;
+
 public class HomeWork {
 
     /**
@@ -11,4 +13,7 @@ public class HomeWork {
         return null;
     }
 
+    public List<Integer> check(List<String> pairs) {
+        return null;
+    }
 }
