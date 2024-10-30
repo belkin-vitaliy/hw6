@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HomeWorkTest {
 
+    private final String ENCODE_TEXT = ".... . .-.. .-.. ---  / .-- --- .-. .-.. -..";
+    private final String DECODE_TEXT = "hello world";
     HomeWork homeWork = new HomeWork();
 
     @Test
@@ -21,9 +23,14 @@ class HomeWorkTest {
 
     @Test
     void check() {
-        List<Integer> expectedQueue = generateQueue(1, 4);
-        List<String> pairs = generatePairs(expectedQueue);
-        assertEquals(expectedQueue, homeWork.check(pairs));
+        MorseTranslator morseTranslator = homeWork.morseTranslator();
+        /*
+          Пример исходного сообщения: 'hello world'
+          Пример закодированного: '.... . .-.. .-.. --- / .-- --- .-. .-.. -..'
+         */
+        assertEquals(ENCODE_TEXT, morseTranslator.encode(DECODE_TEXT));
+        assertEquals(DECODE_TEXT, morseTranslator.decode(ENCODE_TEXT));
+
     }
 
     private List<String> generatePairs(List<Integer> expectedQueue) {
